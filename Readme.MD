@@ -10,3 +10,6 @@ Graph and representation of them thorugh 2d Canvas <br>
 ![Screenshot_Program_1](screenshot/SS_Program_1.png)
 
 #### Program-2 
+Graph Manipulation using Mouse Clicks <br>
+
+![GIF_Program_2](screenshot/GIF_Program_2.gif)
