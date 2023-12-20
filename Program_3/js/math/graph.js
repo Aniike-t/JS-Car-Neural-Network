@@ -4,6 +4,17 @@ class Graph{
         this.segments = segments;
     }
 
+
+    //Push the localstorage to the points array
+    static load(info){
+        const points = info.points.map((p)=>new Point(p.x,p.y));
+        const segments = info.segments.map((i)=>new Segment(
+            points.find((p) => p.equals(i.p1)),
+            points.find((p) => p.equals(i.p2)),
+        ));
+        return new Graph(points,segments);
+    }
+
     //Push the ranodm point to the points array
     addPoint(point){
         this.points.push(point);

@@ -67,7 +67,7 @@ class GraphEditor{
 
     #handleMouseMove(evt)
     {
-        this.mouse = this.viewport.getMouse(evt);
+        this.mouse = this.viewport.getMouse(evt, true);
         //Check if mouse is hovering over a point if hovered make it highlighted    
         this.hovered = getNearestPoint(this.mouse, this.graph.points, 10 * this.viewport.zoom);
         if(this.dragging == true){
@@ -83,6 +83,12 @@ class GraphEditor{
         this.selected = point;
     }
 
+    dispose(){
+        this.graph.dispose();
+        this.selected = null;
+        this.hovered = null;
+    }
+
     display(){
         this.graph.draw(this.ctx);
         if(this.hovered){
@@ -94,4 +100,6 @@ class GraphEditor{
             this.selected.draw(this.ctx,{ outline: true });
         }
     }
+
+    
 }
